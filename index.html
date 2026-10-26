@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Webpage Sample</title>
+    <title>Modern Webpage Sample - Light Theme</title>
     <style>
-        /* Modern CSS Variables & Resets */
+        /* Modern Light Theme CSS Variables & Resets */
         :root {
-            --bg-primary: #0a0b10;
-            --bg-surface: #12141c;
-            --text-main: #f3f4f6;
-            --text-muted: #9ca3af;
-            --accent: #6366f1;
-            --accent-hover: #4f46e5;
+            --bg-primary: #ffffff;
+            --bg-surface: #f9fafb;
+            --text-main: #111827;
+            --text-muted: #4b5563;
+            --accent: #4f46e5;
+            --accent-hover: #4338ca;
+            --border-color: #e5e7eb;
             --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --border-radius: 12px;
             --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -60,6 +61,7 @@
         .btn:hover {
             background-color: var(--accent-hover);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.2);
         }
 
         /* Navigation */
@@ -69,9 +71,9 @@
             left: 0;
             width: 100%;
             z-index: 1000;
-            background-color: rgba(10, 11, 16, 0.8);
+            background-color: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(12px);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .navbar {
@@ -85,7 +87,7 @@
             font-size: 24px;
             font-weight: 800;
             letter-spacing: -0.5px;
-            color: #ffffff;
+            color: var(--text-main);
         }
 
         .logo span {
@@ -125,14 +127,14 @@
 
         .tagline {
             display: inline-block;
-            background-color: rgba(99, 102, 241, 0.1);
+            background-color: rgba(79, 70, 229, 0.08);
             color: var(--accent);
             padding: 6px 16px;
             border-radius: 100px;
             font-size: 14px;
             font-weight: 600;
             margin-bottom: 24px;
-            border: 1px solid rgba(99, 102, 241, 0.2);
+            border: 1px solid rgba(79, 70, 229, 0.15);
         }
 
         .hero h1 {
@@ -141,7 +143,7 @@
             line-height: 1.15;
             letter-spacing: -1.5px;
             margin-bottom: 24px;
-            background: linear-gradient(to right, #ffffff, var(--text-muted));
+            background: linear-gradient(to right, #111827, #4b5563);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -155,10 +157,12 @@
             margin-right: auto;
         }
 
-        /* Features Section (Bento Grid) */
+        /* Features Section */
         .features {
             padding: 100px 0;
-            background-color: rgba(255, 255, 255, 0.01);
+            background-color: #fafafa;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
         }
 
         .section-header {
@@ -170,6 +174,7 @@
             font-size: 36px;
             font-weight: 800;
             margin-bottom: 16px;
+            color: var(--text-main);
         }
 
         .section-header p {
@@ -184,22 +189,23 @@
         }
 
         .card {
-            background-color: var(--bg-surface);
+            background-color: var(--bg-primary);
             padding: 40px;
             border-radius: var(--border-radius);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
             transition: var(--transition);
         }
 
         .card:hover {
             transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.3);
+            border-color: rgba(79, 70, 229, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
         }
 
         .card-icon {
             width: 48px;
             height: 48px;
-            background-color: rgba(99, 102, 241, 0.1);
+            background-color: rgba(79, 70, 229, 0.08);
             border-radius: 8px;
             display: flex;
             align-items: center;
@@ -213,6 +219,7 @@
             font-size: 22px;
             margin-bottom: 12px;
             font-weight: 700;
+            color: var(--text-main);
         }
 
         .card p {
@@ -222,16 +229,16 @@
         /* Footer */
         footer {
             padding: 40px 0;
-            border-top: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
             color: var(--text-muted);
             font-size: 14px;
+            background-color: var(--bg-primary);
         }
 
         /* Responsive Breakpoints */
         @media (max-width: 768px) {
             .nav-links {
-                display: none; /* Simplification for example scope */
+                display: none;
             }
             .hero h1 {
                 font-size: 40px;
@@ -264,7 +271,7 @@
         <div class="container hero-content">
             <span class="tagline">Now in Beta v2.0</span>
             <h1>Design the future of your digital identity</h1>
-            <p>A minimalist, ultra-fast boilerplate engineered with standard semantic code structures and dark-mode optimization defaults.</p>
+            <p>A minimalist, ultra-fast boilerplate engineered with standard semantic code structures and light-mode optimization defaults.</p>
             <a href="#features" class="btn">Explore Blueprint</a>
         </div>
     </section>
