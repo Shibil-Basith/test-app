@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Webpage Sample</title>
+    <style>
+        /* Modern CSS Variables & Resets */
+        :root {
+            --bg-primary: #0a0b10;
+            --bg-surface: #12141c;
+            --text-main: #f3f4f6;
+            --text-muted: #9ca3af;
+            --accent: #6366f1;
+            --accent-hover: #4f46e5;
+            --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --border-radius: 12px;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Utility Components */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: #ffffff;
+            padding: 12px 28px;
+            border-radius: var(--border-radius);
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(10, 11, 16, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 180px 0 100px 0;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            min-height: 85vh;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .tagline {
+            display: inline-block;
+            background-color: rgba(99, 102, 241, 0.1);
+            color: var(--accent);
+            padding: 6px 16px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -1.5px;
+            margin-bottom: 24px;
+            background: linear-gradient(to right, #ffffff, var(--text-muted));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Features Section (Bento Grid) */
+        .features {
+            padding: 100px 0;
+            background-color: rgba(255, 255, 255, 0.01);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-header h2 {
+            font-size: 36px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background-color: var(--bg-surface);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(99, 102, 241, 0.3);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: rgba(99, 102, 241, 0.1);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--accent);
+            font-size: 24px;
+            margin-bottom: 24px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Simplification for example scope */
+            }
+            .hero h1 {
+                font-size: 40px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="container navbar">
+            <div class="logo">Nexus<span>.</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+            <button class="btn" style="padding: 8px 20px; font-size: 14px;">Get Started</button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <span class="tagline">Now in Beta v2.0</span>
+            <h1>Design the future of your digital identity</h1>
+            <p>A minimalist, ultra-fast boilerplate engineered with standard semantic code structures and dark-mode optimization defaults.</p>
+            <a href="#features" class="btn">Explore Blueprint</a>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Engineered for Performance</h2>
+                <p>Everything you need to launch beautiful frontend architectures instantly.</p>
+            </div>
+            
+            <div class="grid">
+                <!-- Card 1 -->
+                <div class="card">
+                    <div class="card-icon">✦</div>
+                    <h3>CSS Custom Properties</h3>
+                    <p>Centralized theme control via standard global CSS variables for effortless scalability.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <div class="card-icon">⚡</div>
+                    <h3>Zero Dependencies</h3>
+                    <p>Built exclusively on raw semantic layouts. No external frameworks slowing down loading cycles.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="card">
+                    <div class="card-icon">⚿</div>
+                    <h3>Responsive Layouts</h3>
+                    <p>Fluid standard grid architecture adapting natively from small screens up to 4K displays.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Nexus System. Engineered with care.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
